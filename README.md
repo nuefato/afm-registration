@@ -6,7 +6,7 @@ This is a membership registration website for Agape Force Ministry, offering tee
 ## License
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more details.
 
-## Authors
+## Author
 - **Nuefato Build**
 
 ## Contact
