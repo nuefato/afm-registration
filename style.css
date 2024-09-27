@@ -1,0 +1,116 @@
+@font-face {
+    font-family: "LM";
+    font-weight: 700;
+    src: url("fonts/LEMONMILK-Bold.otf") format("truetype");
+}
+@font-face {
+    font-family: "PS";
+    font-weight: 700;
+    src: url("fonts/Product\ Sans\ Bold.ttf") format("truetype");
+}
+:root {
+    --scb: #0093d5; /* Sky Cerulean Blue */
+    --acb: #0081bd; /* Azure Cerulean Blue */
+    --dcb: #0070a3; /* Deep Cerulean Blue */
+}
+* {
+    user-select: none;
+}
+a {
+    text-decoration: none;
+    color: #000;
+}
+a:hover {
+    color: #000;
+}
+#church, #house {
+    color: var(--scb);
+}
+#church {
+    font-family: LM;
+}
+#house, #agm {
+    font-family: PS;
+}
+#cover {
+    font-family: LM;
+    background-image: linear-gradient(hsla(199, 100%, 42%, 0.3), var(--scb)), url(img/agapians.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    text-shadow: 1px 1px 1px #003e58;
+    border-radius: .3rem .3rem 0 0;
+    height: 300px;
+}
+.ti:not(.ti-circle-check-filled) {
+    font-size: larger;
+}
+#avatar {
+    cursor: pointer;
+}
+#avatar, #avatarClone {
+    height: 125px;
+    width: 125px;
+    object-fit: cover;
+    border: 1px solid #dfe4e7;
+}
+#avatarInput {
+    cursor: pointer;
+    height: 1px;
+    width: 1px!important;
+    height: 125px;
+}
+#submit {
+    background: var(--scb);
+    border: var(--scb);
+    border-radius: 2rem;
+}
+#submit:hover {
+    background: var(--acb);
+    border: var(--acb);
+}
+#submit:active {
+    background: var(--dcb);
+    border: var(--dcb);
+}
+#picAlert {
+    transform: translateX(calc(100% + 1em));
+    opacity: 0;
+}
+.picAlert {
+    animation: slide 3s;
+}
+@keyframes slide {
+    0% {
+    }
+    20% {
+        opacity: 1;
+        transform: translateX(0%);
+    }
+    80% {
+        opacity: 1;
+        transform: translateX(0%);
+    }
+    100% {
+        opacity: 0;
+        transform: translateX(calc(100% + 1em));
+    }
+}
+.form-control:focus, .form-select:focus, .accordion-button:focus, .form-check-input:focus {
+    border-color: var(--scb);
+    box-shadow: none;
+}
+.accordion-button  {
+    padding: 16px 12px;
+}
+.accordion-button:not(.collapsed)  {
+    background: hsla(199, 100%, 42%, 0.25);
+    color: var(--bs-body-color);
+}
+.accordion-button:not(.collapsed)::after {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23212529'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+}
+.form-check-input:checked {
+    background-color: var(--scb);
+    border-color: var(--scb);
+}
