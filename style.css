@@ -32,15 +32,18 @@ a:hover {
 #house, #agm {
     font-family: PS;
 }
+main > div {
+    border-radius: 16px;
+}
 #cover {
     font-family: LM;
-    background-image: linear-gradient(hsla(199, 100%, 42%, 0.3), var(--scb)), url(img/agapians.jpg);
-    background-size: cover;
+    background-image: url(img/cover.png);
+    background-size: 100% 100%;
+    padding-bottom: 50%; /* (image height / image width) * 100 */
     background-position: center;
     background-repeat: no-repeat;
     text-shadow: 1px 1px 1px #003e58;
-    border-radius: .3rem .3rem 0 0;
-    height: 300px;
+    border-radius: 16px 16px 0 0;
 }
 .ti:not(.ti-circle-check-filled) {
     font-size: larger;
@@ -96,12 +99,16 @@ a:hover {
         transform: translateX(calc(100% + 1em));
     }
 }
-.form-control:focus, .form-select:focus, .accordion-button:focus, .form-check-input:focus {
-    border-color: var(--scb);
-    box-shadow: none;
+.form-control, .form-select, .accordion-item, .accordion-button.collapsed {
+    border-radius: 8px!important;
 }
 .accordion-button  {
     padding: 16px 12px;
+    border-radius: 8px 8px 0 0!important;
+}
+.accordion-item:not(:first-child) {
+    margin-top: .5rem!important;
+    border: 1px solid rgba(0, 0, 0, .125);
 }
 .accordion-button:not(.collapsed)  {
     background: hsla(199, 100%, 42%, 0.25);
@@ -113,4 +120,8 @@ a:hover {
 .form-check-input:checked {
     background-color: var(--scb);
     border-color: var(--scb);
+}
+.form-control:focus, .form-select:focus, .accordion-button:focus, .form-check-input:focus, .btn-primary:focus {
+    border-color: var(--scb);
+    box-shadow: none;
 }
