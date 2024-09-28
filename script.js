@@ -117,7 +117,7 @@ avatarInput.addEventListener('change', (e) => {
     reader.readAsDataURL(image);
 
     if (fileSize > 5) {
-        console.log('Image file size exceeds 10MB limit.');
+        console.log('Image file size exceeds 5MB limit.');
         avatarInput.value = '';
     } else if (!['jpg', 'jpeg', 'png', 'gif', 'svg', 'webp', 'tif', 'tiff'].includes(fileExtension)) {
         alert('Only JPG, JPEG, PNG, and GIF file formats are allowed.');
@@ -133,7 +133,10 @@ firstName.addEventListener("change", () => {
 })
 
 form.addEventListener('submit', ()=>{
-    form.reset();
+    setTimeout(() => {
+        form.reset();
+        avatar.src = 'img/user.svg';
+    }, 5000)
 })
 
 popSel("#state", states);
