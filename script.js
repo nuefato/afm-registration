@@ -39,7 +39,7 @@ get = (key) => localStorage.getItem(key);
 del = (key) => localStorage.removeItem(key);
 
 const selects = $$("select"),
-    inputs = $$("input:not([type='checkbox']):not(#zip):not(#teenPhone):not(#teenEmail):not(guardEmail):not(#school):not(#facebook):not(#instagram):not(#x):not(#tiktok):not(#support):not(#suggestions):not(#needs)"),
+    inputs = $$("input:not([type='checkbox']):not(#zip):not(#teenPhone):not(#teenEmail):not(#guardEmail):not(#school):not(#facebook):not(#instagram):not(#x):not(#tiktok):not(#support):not(#suggestions):not(#needs)"),
     avatarInput = $('#avatarInput'),
     // picAlert = $('#picAlert'),avatarInput
     avatar = $('#avatar'),
