@@ -132,6 +132,10 @@ firstName.addEventListener("change", () => {
     set('nameClone', firstName.value);
 })
 
+form.addEventListener('submit', ()=>{
+    form.reset();
+})
+
 popSel("#state", states);
 popSel("#relationship", relationships);
 popSel("#repentance", binary);
