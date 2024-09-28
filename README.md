@@ -1,6 +1,13 @@
 # Membership Registration System
 ## 📋 Description
-This is a 2-page membership registration website for Agape Force Ministry, CGMi N. E. Bishopric Headquarters (Solution House), offering teens a platform to get formally inducted into their faith-based community. The user is greeted with a registeration form, which validates using HTML validation techniques and then submits to an email address (all in front-end), thus eliminating the need for Javascript, PHP, or a traditional server validation and submission. After a user has been validated, it refers them to a success page.
+This membership registration platform is designed for Agape Force Ministry, CGMi N. E. Bishopric Headquarters (Solution House), specifically aimed at facilitating the formal induction of teens into the faith-based community. The website spans two pages and is crafted with simplicity and efficiency in mind, adhering to modern web standards.
+
+- **Streamlined Registration Form:** Users are greeted with a simple and intuitive registration form.
+- **HTML Validation:** The form employs built-in HTML validation techniques to ensure the data is accurate and complete before submission.
+- **Front-End Only Solution:** No back-end technologies (_Node.js_, *PHP*, or *traditional server*) are required for validation, reducing complexity.
+- **Email Submission:** After validation, the form data is sent directly to a designated email address.
+- **Confirmation Page:** Upon successful submission, users are redirected to a confirmation page that acknowledges their registration and provides further instructions.
+- **Lightweight Design:** This approach reduces technical overhead, making it ideal for community-driven membership portals.
 
 ## ⚙️ Technologies
 - [HTML](https://github.com/topics/html), [CSS](https://github.com/topics/css), [Vanilla JavaScript](https://github.com/topics/javascript)
