@@ -2,6 +2,7 @@
 ## 📋 Description
 This membership registration platform is designed for Agape Force Ministry, CGMi N. E. Bishopric Headquarters (Solution House), specifically aimed at facilitating the formal induction of teens into the faith-based community. The website spans two pages and is crafted with simplicity and efficiency in mind, adhering to modern web standards.
 
+### Process Overview
 - **Streamlined Registration Form:** Users are greeted with a simple and intuitive registration form.
 - **HTML Validation:** The form employs built-in HTML validation techniques to ensure the data is accurate and complete before submission.
 - **Front-End Only Solution:** No back-end technologies (_Node.js_, *PHP*, or *traditional server*) are required for validation, reducing complexity.
