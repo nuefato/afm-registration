@@ -1,3 +1,4 @@
+/* Font definitions */
 @font-face {
     font-family: "LM";
     font-weight: 700;
@@ -8,28 +9,35 @@
     font-weight: 700;
     src: url("fonts/Product\ Sans\ Bold.ttf") format("truetype");
 }
+
+/* Global variables  */
 :root {
+    --b: #000; /* Black */
     --scb: #0093d5; /* Sky Cerulean Blue */
     --acb: #0081bd; /* Azure Cerulean Blue */
     --dcb: #0070a3; /* Deep Cerulean Blue */
 }
+
+/* Global styles */
 * {
     user-select: none;
 }
 a {
     text-decoration: none;
-    color: #000;
+    color: var(--b);
 }
 a:hover {
-    color: #000;
+    color: var(--b);
 }
+
+/* Element-specific styles  */
 #church, #house {
     color: var(--scb);
 }
 #church {
     font-family: LM;
 }
-#house, #agm {
+#house, #afm {
     font-family: PS;
 }
 main > div {
@@ -45,6 +53,8 @@ main > div {
     text-shadow: 1px 1px 1px #003e58;
     border-radius: 16px 16px 0 0;
 }
+
+/* Icon and avatar Styles */
 .ti:not(.ti-circle-check-filled) {
     font-size: larger;
 }
@@ -63,6 +73,8 @@ main > div {
     width: 1px!important;
     height: 125px;
 }
+
+/* Form and button styles */
 #submit {
     background: var(--scb);
     border: var(--scb);
@@ -99,6 +111,8 @@ main > div {
         transform: translateX(calc(100% + 1em));
     }
 }
+
+/* Bootstrap Customizations */
 .form-control, .form-select, .accordion-item, .accordion-button.collapsed {
     border-radius: 8px!important;
 }

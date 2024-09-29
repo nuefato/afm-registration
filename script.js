@@ -1,3 +1,4 @@
+// Data definitions 
 const states = [
     "Abia", "Adamawa", "Akwa Ibom", "Anambra", "Bauchi", "Bayelsa", "Benue", "Borno", "Cross River", "Delta", "Ebonyi", "Edo", "Ekiti", "Enugu", "FCT Abuja", "Gombe", "Imo", "Jigawa", "Kaduna", "Kano", "Katsina", "Kebbi", "Kogi", "Kwara", "Lagos", "Nasarawa", "Niger", "Ogun", "Ondo", "Osun", "Oyo", "Plateau", "Rivers", "Sokoto", "Taraba", "Yobe", "Zamfara"
 ],
@@ -32,12 +33,12 @@ const states = [
         "Children's Class Graduation", "Joined Church as a Teen", "Mail", "Social Media", "Online Search", "School Program", "Neighborhood Outreach", "Friend", "Family Member", "Other"
     ];
 
+// DOM selectors and local storage helpers 
 $ = (selector) => document.querySelector(selector);
 $$ = (selector) => document.querySelectorAll(selector);
 set = (key, value) => localStorage.setItem(key, value);
 get = (key) => localStorage.getItem(key);
 del = (key) => localStorage.removeItem(key);
-
 const selects = $$("select"),
     inputs = $$("input:not([type='checkbox']):not(#zip):not(#teenPhone):not(#teenEmail):not(#guardEmail):not(#school):not(#facebook):not(#instagram):not(#x):not(#tiktok):not(#support):not(#suggestions):not(#needs)"),
     avatarInput = $('#avatarInput'),
@@ -52,14 +53,15 @@ const selects = $$("select"),
     url = new URL(window.location.href),
     canonicalUrl = url.origin + url.pathname;
 
+// Meta tags and canonical URL
 document.head.innerHTML += `
     <link rel="canonical" href="${canonicalUrl}">
     <meta property="og:url" content="${canonicalUrl}">
     <meta property="instagram:url" content="${canonicalUrl}">
     `;
 
-// populate the select element with options
-popSel = (select, dataset) => {
+// Form population functions
+popSel = (select, dataset) => { // populate the select element with options
     dataset.forEach(function (entry) {
         var option = document.createElement("option");
         option.value = entry;
@@ -67,9 +69,7 @@ popSel = (select, dataset) => {
         $(select).appendChild(option);
     });
 }
-
-// populate the multichoice div element with form check components
-popMulti = (multichoice, dataset, name) => {
+popMulti = (multichoice, dataset, name) => { // populate the multichoice div element with form check components
     toID = (str) => {
         return str.replace(/[^a-zA-Z0-9\s]/g, '').toLowerCase().split(' ').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join('');
     }
@@ -85,13 +85,11 @@ popMulti = (multichoice, dataset, name) => {
         $(multichoice).innerHTML += choice;
     });
 }
-
 require = (fields) => {
     fields.forEach((field) => {
         field.setAttribute("required", true);
     });
 }
-
 slideIn = (obj, classStr) => {
     obj.classList.add(classStr);
     setTimeout(() => {
@@ -99,10 +97,10 @@ slideIn = (obj, classStr) => {
     }, 3000);
 }
 
+// Event listening and form validation
 avatar.addEventListener('click', () => {
     avatarInput.click();
 });
-
 avatarInput.addEventListener('change', (e) => {
     const image = e.target.files[0],
         reader = new FileReader(),
@@ -127,11 +125,9 @@ avatarInput.addEventListener('change', (e) => {
         slideIn($('#picAlert'), 'picAlert');
     }
 });
-
 firstName.addEventListener("change", () => {
     set('nameClone', firstName.value);
 })
-
 form.addEventListener('submit', ()=>{
     setTimeout(() => {
         form.reset();
@@ -139,6 +135,7 @@ form.addEventListener('submit', ()=>{
     }, 5000)
 })
 
+// Initialisation
 popSel("#state", states);
 popSel("#relationship", relationships);
 popSel("#repentance", binary);
@@ -146,13 +143,12 @@ popSel("#baptism", baptism);
 popSel("#grade", grade);
 popSel("#referral", referrals);
 popSel("#gender", genders);
-
 popMulti("#academicInterests", academicInterests, "Academic Interests");
 popMulti("#hobbies", hobbies, "Hobbies");
 popMulti("#talents", talents, "Talents");
 popMulti("#interests", interests, "Interests");
-
 require(selects);
 require(inputs);
 
+// Hobbies and sub-categories (NOTE)
 // "Outdoor Adventures (hiking, camping, trekking)", "Sports (team, individual, martial arts)", "Reading (fiction, non-fiction, poetry)", "Gaming (video, board, card)", "Cooking (baking, global cuisines, food photography)", "Traveling (cultural exploration, backpacking)", "Language Learning (conversational, written)", "Volunteering (community service, animal welfare)", "Yoga/Meditation (Hatha, Vinyasa, mindfulness)", "Gardening (urban, rural, permaculture)", "Water Activities (swimming, surfing, kayaking)", "Cycling (road, mountain, leisure)", "Social Dancing (salsa, swing, ballroom)", "Star Gazing/Astronomy (telescope, astrophotography)", "Cultural Crafts (textiles, pottery, woodworking)"
